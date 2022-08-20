@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 20, 2022 at 11:44 AM
+-- Generation Time: Aug 20, 2022 at 05:41 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.26
 
@@ -60,6 +60,22 @@ CREATE TABLE `brands` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `brands`
+--
+
+INSERT INTO `brands` (`id`, `brand_name`, `brand_logo`, `created_at`, `updated_at`) VALUES
+(3, 'Levis', 'public/media/brand/200822_15_36_38.png', NULL, NULL),
+(4, 'Adidas', 'public/media/brand/200822_10_55_54.png', NULL, NULL),
+(5, 'Asus', 'public/media/brand/200822_10_11_55.png', NULL, NULL),
+(6, 'Canon', 'public/media/brand/200822_10_24_55.png', NULL, NULL),
+(7, 'Dell', 'public/media/brand/200822_10_38_55.png', NULL, NULL),
+(8, 'Gucci', 'public/media/brand/200822_10_51_55.png', NULL, NULL),
+(9, 'Lenovo', 'public/media/brand/200822_10_06_56.png', NULL, NULL),
+(10, 'Nike', 'public/media/brand/200822_10_19_56.png', NULL, NULL),
+(11, 'Rado', 'public/media/brand/200822_10_30_56.png', NULL, NULL),
+(12, 'Sony', 'public/media/brand/200822_10_42_56.png', NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -79,7 +95,6 @@ CREATE TABLE `categories` (
 
 INSERT INTO `categories` (`id`, `category_name`, `created_at`, `updated_at`) VALUES
 (1, 'Mans Fashion', NULL, NULL),
-(2, 'Women asdf', NULL, NULL),
 (7, 'Sea Fish', '2022-08-20 03:20:49', '2022-08-20 03:20:49'),
 (8, 'Man Item', '2022-08-20 03:20:56', '2022-08-20 03:20:56');
 
@@ -243,7 +258,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `categories`
