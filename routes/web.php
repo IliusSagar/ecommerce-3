@@ -51,3 +51,10 @@ Route::post('admin/store/coupon', 'Admin\Category\CouponController@StoreCoupon')
 Route::get('delete/coupon/{id}', 'Admin\Category\CouponController@DeleteCoupon');
 Route::get('edit/coupon/{id}', 'Admin\Category\CouponController@EditCoupon');
 Route::post('update/coupon/{id}', 'Admin\Category\CouponController@UpdateCoupon');
+
+// Newslater
+Route::get('admin/newslater', 'Admin\Category\CouponController@Newslater')->name('admin.newslater');
+Route::get('delete/sub/{id}', 'Admin\Category\CouponController@DeleteSub');
+
+// Frontend All Routes
+Route::post('store/newslater', 'FrontController@StoreNewslater')->name('store.newslater');

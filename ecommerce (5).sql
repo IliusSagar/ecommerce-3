@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 23, 2022 at 03:49 AM
+-- Generation Time: Aug 23, 2022 at 05:51 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.26
 
@@ -162,7 +162,29 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (5, '2022_08_15_153012_create_categories_table', 2),
 (6, '2022_08_15_153327_create_subcategories_table', 2),
 (7, '2022_08_16_011524_create_brands_table', 2),
-(8, '2022_08_23_005902_create_coupons_table', 3);
+(8, '2022_08_23_005902_create_coupons_table', 3),
+(9, '2022_08_23_015831_create_newslaters_table', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `newslaters`
+--
+
+CREATE TABLE `newslaters` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `newslaters`
+--
+
+INSERT INTO `newslaters` (`id`, `email`, `created_at`, `updated_at`) VALUES
+(1, 'sa@gmail.com', '2022-08-23 15:19:30', NULL),
+(2, 'admin@gmail.com', '2022-08-23 15:21:38', NULL);
 
 -- --------------------------------------------------------
 
@@ -267,6 +289,12 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `newslaters`
+--
+ALTER TABLE `newslaters`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
@@ -323,7 +351,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `newslaters`
+--
+ALTER TABLE `newslaters`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `subcategories`
