@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 20, 2022 at 05:41 PM
+-- Generation Time: Aug 23, 2022 at 02:52 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.26
 
@@ -96,7 +96,9 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`id`, `category_name`, `created_at`, `updated_at`) VALUES
 (1, 'Mans Fashion', NULL, NULL),
 (7, 'Sea Fish', '2022-08-20 03:20:49', '2022-08-20 03:20:49'),
-(8, 'Man Item', '2022-08-20 03:20:56', '2022-08-20 03:20:56');
+(8, 'Man Item', '2022-08-20 03:20:56', '2022-08-20 03:20:56'),
+(9, 'Women', '2022-08-22 10:26:18', '2022-08-22 10:26:18'),
+(10, 'Home', '2022-08-22 10:26:30', '2022-08-22 10:26:30');
 
 -- --------------------------------------------------------
 
@@ -163,6 +165,15 @@ CREATE TABLE `subcategories` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `subcategories`
+--
+
+INSERT INTO `subcategories` (`id`, `category_id`, `subcategory_name`, `created_at`, `updated_at`) VALUES
+(1, 8, 'Tshirt', NULL, NULL),
+(2, 1, 'Pant', NULL, NULL),
+(4, 7, 'Home Item Update', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -264,7 +275,7 @@ ALTER TABLE `brands`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -282,7 +293,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `subcategories`
 --
 ALTER TABLE `subcategories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
