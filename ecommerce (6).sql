@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 23, 2022 at 05:51 PM
+-- Generation Time: Aug 28, 2022 at 03:47 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.26
 
@@ -163,7 +163,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (6, '2022_08_15_153327_create_subcategories_table', 2),
 (7, '2022_08_16_011524_create_brands_table', 2),
 (8, '2022_08_23_005902_create_coupons_table', 3),
-(9, '2022_08_23_015831_create_newslaters_table', 4);
+(9, '2022_08_23_015831_create_newslaters_table', 4),
+(10, '2022_08_23_160421_create_products_table', 5);
 
 -- --------------------------------------------------------
 
@@ -201,6 +202,48 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `subcategory_id` int(11) DEFAULT NULL,
+  `brand_id` int(11) DEFAULT NULL,
+  `product_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `product_code` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `product_quantity` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `product_details` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `product_color` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `product_size` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `selling_price` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `discount_price` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `video_link` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `main_slider` int(11) DEFAULT NULL,
+  `hot_deal` int(11) DEFAULT NULL,
+  `beast_rated` int(11) DEFAULT NULL,
+  `mid_slider` int(11) DEFAULT NULL,
+  `hot_new` int(11) DEFAULT NULL,
+  `trend` int(11) DEFAULT NULL,
+  `image_one` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image_two` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image_three` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `category_id`, `subcategory_id`, `brand_id`, `product_name`, `product_code`, `product_quantity`, `product_details`, `product_color`, `product_size`, `selling_price`, `discount_price`, `video_link`, `main_slider`, `hot_deal`, `beast_rated`, `mid_slider`, `hot_new`, `trend`, `image_one`, `image_two`, `image_three`, `status`, `created_at`, `updated_at`) VALUES
+(3, 7, 4, 3, 'product 2 Update', '4574727222', '15', '<p><span style=\"font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: justify;\"><b>Update</b> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</span><br></p>', 'red,black,green', 's,l,m,xxl', '1200', '300', 'https://www.youtube.com/watch?v=oQsOgXk5Oew222', 1, NULL, 1, NULL, 1, NULL, 'public/media/product/280822_13_12_37.png', 'public/media/product/1742197192259355.png', 'public/media/product/1742197192409974.png', 1, NULL, NULL),
+(5, 8, 1, 5, 'Test Productr', '4574727', '10', '<p>sdgfgag</p>', 'red', 's,l', '800', NULL, 'https://www.youtube.com/watch?v=oQsOgXk5Oew', 1, 1, NULL, 1, NULL, 1, 'public/media/product/1742247428274880.png', 'public/media/product/1742247428540085.png', 'public/media/product/1742247428612758.png', 1, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `subcategories`
 --
 
@@ -218,7 +261,7 @@ CREATE TABLE `subcategories` (
 
 INSERT INTO `subcategories` (`id`, `category_id`, `subcategory_name`, `created_at`, `updated_at`) VALUES
 (1, 8, 'Tshirt', NULL, NULL),
-(2, 1, 'Pant', NULL, NULL),
+(2, 8, 'Pant', NULL, NULL),
 (4, 7, 'Home Item Update', NULL, NULL);
 
 -- --------------------------------------------------------
@@ -301,6 +344,12 @@ ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `subcategories`
 --
 ALTER TABLE `subcategories`
@@ -351,13 +400,19 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `newslaters`
 --
 ALTER TABLE `newslaters`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `subcategories`
