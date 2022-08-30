@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 28, 2022 at 03:47 PM
+-- Generation Time: Aug 30, 2022 at 06:06 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.26
 
@@ -164,7 +164,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (7, '2022_08_16_011524_create_brands_table', 2),
 (8, '2022_08_23_005902_create_coupons_table', 3),
 (9, '2022_08_23_015831_create_newslaters_table', 4),
-(10, '2022_08_23_160421_create_products_table', 5);
+(10, '2022_08_23_160421_create_products_table', 5),
+(11, '2022_08_29_125901_create_post_category_table', 6),
+(12, '2022_08_29_130009_create_posts_table', 6);
 
 -- --------------------------------------------------------
 
@@ -198,6 +200,54 @@ CREATE TABLE `password_resets` (
   `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `posts`
+--
+
+CREATE TABLE `posts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  `post_title_en` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `post_title_bn` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `post_image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `details_en` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `details_bn` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`id`, `category_id`, `post_title_en`, `post_title_bn`, `post_image`, `details_en`, `details_bn`, `created_at`, `updated_at`) VALUES
+(3, 3, 'Affiliate marketing is the process of earning a commission11', 'অ্যাফিলিয়েট মার্কেটিং হল কমিশন উপার্জনের প্রক্রিয়া', 'public/media/post/1742592926220016.jpg', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam perferendis aliquid aspernatur placeat odit, labore blanditiis corrupti quisquam, cumque expedita numquam quos adipisci quae, at a? Blanditiis, maiores obcaecati harum quos quaerat, aspernatur non ex vero consequatur voluptas exercitationem. Impedit sit maxime, soluta qui dolores rem amet excepturi porro consequatur.<br></p>', '<p>ইম্পিডিট সিট ম্যাক্সিম, সোলুটা কুই ডলোরেস রেম অ্যামেট ব্যতিক্রমি পোরো কনসিক্যাচার।<br></p>', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_category`
+--
+
+CREATE TABLE `post_category` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `category_name_en` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `category_name_bn` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `post_category`
+--
+
+INSERT INTO `post_category` (`id`, `category_name_en`, `category_name_bn`, `created_at`, `updated_at`) VALUES
+(2, 'local1', 'স্থানীয়1', NULL, NULL),
+(3, 'education', 'শিক্ষা', NULL, NULL),
+(4, 'Hi', 'test', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -344,6 +394,18 @@ ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
+-- Indexes for table `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `post_category`
+--
+ALTER TABLE `post_category`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
@@ -400,12 +462,24 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `newslaters`
 --
 ALTER TABLE `newslaters`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `post_category`
+--
+ALTER TABLE `post_category`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
