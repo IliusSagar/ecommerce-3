@@ -16,14 +16,15 @@ class ProductController extends Controller
 
     public function index(){
 
+      
         $product = DB::table('products')
-                        ->join('categories','products.category_id','categories.id')
-                        ->join('brands','products.brand_id','brands.id')
-                        ->select('products.*','categories.category_name','brands.brand_name')
-                        ->get();
+                    ->join('categories','products.category_id','categories.id')
+                    ->join('brands','products.brand_id','brands.id')
+                    ->select('products.*','categories.category_name','brands.brand_name')
+                    ->get();
 
-       // return response()->json($product);
-       return view('admin.product.index',compact('product'));
+        // return response()->json($product);
+        return view('admin.product.index',compact('product'));
 
     }
 
@@ -48,6 +49,7 @@ class ProductController extends Controller
         $data['product_name'] = $request->product_name;
         $data['product_code'] = $request->product_code;
         $data['product_quantity'] = $request->product_quantity;
+        $data['discount_price'] = $request->discount_price;
         $data['category_id'] = $request->category_id;
         $data['subcategory_id'] = $request->subcategory_id;
         $data['brand_id'] = $request->brand_id;

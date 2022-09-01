@@ -26,29 +26,37 @@
 
             <div class="form-layout">
               <div class="row mg-b-25">
-                <div class="col-lg-4">
+
+                <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label">Product Name: <span class="tx-danger">*</span></label>
-                    <input class="form-control" type="text" name="product_name" value="" placeholder="Enter Product Name">
+                    <input class="form-control" type="text" name="product_name" value="" placeholder="Enter Product Name" required>
                   </div>
                 </div><!-- col-4 -->
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label">Product Code: <span class="tx-danger">*</span></label>
-                    <input class="form-control" type="text" name="product_code" value="" placeholder="Enter Product Code">
+                    <input class="form-control" type="text" name="product_code" value="" placeholder="Enter Product Code" required>
                   </div>
                 </div><!-- col-4 -->
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label">Quantity: <span class="tx-danger">*</span></label>
-                    <input class="form-control" type="text" name="product_quantity" value="" placeholder="Product Quantity">
+                    <input class="form-control" type="text" name="product_quantity" value="" placeholder="Product Quantity" required>
+                  </div>
+                </div><!-- col-4 -->
+
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label">Discount Price: <span class="tx-danger">*</span></label>
+                    <input class="form-control" type="text" name="discount_price" value="" placeholder="Discount Price" required>
                   </div>
                 </div><!-- col-4 -->
                 
                 <div class="col-lg-4">
                   <div class="form-group mg-b-10-force">
                     <label class="form-control-label">Category: <span class="tx-danger">*</span></label>
-                    <select class="form-control select2" data-placeholder="Choose country" name="category_id">
+                    <select class="form-control select2" data-placeholder="Choose country" name="category_id" required>
                       <option label="Choose Category"></option>
 
                       @foreach($category as $row)
@@ -62,7 +70,7 @@
                 <div class="col-lg-4">
                   <div class="form-group mg-b-10-force">
                     <label class="form-control-label">Sub Category: <span class="tx-danger">*</span></label>
-                    <select class="form-control select2" data-placeholder="Choose country" name="subcategory_id">
+                    <select class="form-control select2" data-placeholder="Choose country" name="subcategory_id" required>
                       
                     </select>
                   </div>
@@ -71,7 +79,7 @@
                 <div class="col-lg-4">
                   <div class="form-group mg-b-10-force">
                     <label class="form-control-label">Brand: <span class="tx-danger">*</span></label>
-                    <select class="form-control select2" data-placeholder="Choose country" name="brand_id">
+                    <select class="form-control select2" data-placeholder="Choose country" name="brand_id" required>
                       <option label="Choose Brand"></option>
 
                       @foreach($brand as $br)
@@ -85,28 +93,28 @@
                 <div class="col-lg-4">
                   <div class="form-group">
                     <label class="form-control-label">Product Size: <span class="tx-danger">*</span></label>
-                    <input class="form-control" type="text" name="product_size" value="" id="size" data-role="tagsinput" >
+                    <input class="form-control" type="text" name="product_size" value="" id="size" data-role="tagsinput" required>
                   </div>
                 </div><!-- col-4 -->
 
                 <div class="col-lg-4">
                   <div class="form-group">
                     <label class="form-control-label">Product Color: <span class="tx-danger">*</span></label>
-                    <input class="form-control" type="text" name="product_color" value="" id="color" data-role="tagsinput" >
+                    <input class="form-control" type="text" name="product_color" value="" id="color" data-role="tagsinput" required>
                   </div>
                 </div><!-- col-4 -->
 
                 <div class="col-lg-4">
                   <div class="form-group">
                     <label class="form-control-label">Selling Price: <span class="tx-danger">*</span></label>
-                    <input class="form-control" type="text" name="selling_price" value="" placeholder="Selling Price" >
+                    <input class="form-control" type="text" name="selling_price" value="" placeholder="Selling Price" required>
                   </div>
                 </div><!-- col-4 -->
 
                 <div class="col-lg-12">
                   <div class="form-group">
                     <label class="form-control-label">Product Details: <span class="tx-danger">*</span></label>
-                    <textarea class="form-control" id="summernote"  name="product_details"></textarea>
+                    <textarea class="form-control" id="summernote"  name="product_details" required></textarea>
                     
                   </div>
                 </div><!-- col-4 -->
@@ -114,7 +122,7 @@
                 <div class="col-lg-12">
                   <div class="form-group">
                     <label class="form-control-label">Video Link: <span class="tx-danger">*</span></label>
-                    <input class="form-control" name="video_link" placeholder="Video Link">
+                    <input class="form-control" name="video_link" placeholder="Video Link" required>
                   </div>
                 </div><!-- col-4 -->
 
