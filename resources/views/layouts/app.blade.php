@@ -18,6 +18,8 @@
 
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
 
+<link rel="stylesheet" href="sweetalert2.min.css">
+
 </head>
 
 <body>
@@ -281,6 +283,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script src="{{ asset('https://unpkg.com/sweetalert/dist/sweetalert.min.js')}}"></script>
 

@@ -97,3 +97,5 @@ Route::post('update/post/{id}', 'Admin\PostController@UpdatePost');
 // Frontend All Routes
 Route::post('store/newslater', 'FrontController@StoreNewslater')->name('store.newslater');
 
+// ADD Wishlist
+Route::get('add/wishlist/{id}', 'WishlistController@addWishlist');
